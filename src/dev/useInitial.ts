@@ -1,12 +1,12 @@
-import {InitialHookStatus} from "@react-buddy/ide-toolbox";
-import {useState} from "react";
+import { InitialHookStatus, } from "@react-buddy/ide-toolbox";
+import { useState, } from "react";
 
 export const useInitial: () => InitialHookStatus = () => {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [status, _] = useState<InitialHookStatus>({
+  const [ status, _, ] = useState<InitialHookStatus>({
     loading: false,
     error: false,
-  });
+  },);
   /*
     Implement hook functionality here.
     If you need to execute async operation, set loading to true and when it's over, set loading to false.
