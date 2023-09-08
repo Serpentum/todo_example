@@ -8,7 +8,7 @@ module.exports = {
     ],
     ignorePatterns: ['dist', '.eslintrc.cjs'],
     parser: '@typescript-eslint/parser',
-    plugins: ['react-refresh', 'eslint-plugin-import-helpers'],
+    plugins: ['react-refresh', 'eslint-plugin-import-helpers', "named-import-spacing"],
     rules: {
         'react-refresh/only-export-components': [
             'warn',
@@ -19,12 +19,24 @@ module.exports = {
             {
                 newlinesBetween: 'always',
                 groups: [
+                    'absolute',
                     'module',
+                    '/^@components/',
+                    '/^@pages/',
+                    '/^@share/',
+                    '/^@model/',
                     'parent',
                     'sibling',
                     'index'
                 ],
                 alphabetize: { order: 'asc', ignoreCase: true },
-            }]
+            }],
+        "no-unused-vars": ["error", { "varsIgnorePattern": "[_]" }],
+        "named-import-spacing/named-import-spacing": 2,
+        "no-sparse-arrays": "error",
+        "array-bracket-spacing": ["error", "always"],
+        "object-curly-spacing": ["error", "always"],
+        "comma-spacing": ["error", { "before": false, "after": true }],
+        "comma-dangle": ["error", "always"]
     },
 }
